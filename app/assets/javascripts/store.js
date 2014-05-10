@@ -7,3 +7,7 @@ Crm.Store = DS.Store.extend({
 Crm.ApplicationAdapter = DS.ActiveModelAdapter.extend({
 
 });
+
+Crm.ApplicationSerializer = DS.ActiveModelSerializer.extend({
+  
+});

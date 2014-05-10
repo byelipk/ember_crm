@@ -7,7 +7,7 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @person = Person.find(parans[:id])
+    @person = Person.find(params[:id])
     render json: @person, status: 200
   end
 end

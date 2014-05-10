@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @company = Company.find(parmas(:id))
+    @company = Company.find(params[:id])
     render json: @company, status: 200
   end
 end

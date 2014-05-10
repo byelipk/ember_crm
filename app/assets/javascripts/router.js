@@ -2,6 +2,13 @@
 
 Crm.Router.map(function() {
   // this.resource('posts');
-  this.resource('companies');
-  this.resource('people');
+  this.resource('companies', function() {
+    this.resource('company', { path: '/:company_id' })
+    this.route('new')
+  });
+
+  this.resource('people', function() {
+    this.resource('person', { path: '/:person_id' })
+    this.route('new')
+  });
 });
