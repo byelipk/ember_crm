@@ -2,4 +2,6 @@
 
 Crm.Router.map(function() {
   // this.resource('posts');
+  this.resource('companies');
+  this.resource('people');
 });
