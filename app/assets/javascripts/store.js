@@ -8,14 +8,4 @@ Crm.ApplicationAdapter = DS.ActiveModelAdapter.extend({
 
 });
 
-Crm.ApplicationSerializer = DS.ActiveModelSerializer.extend({
-  // normalize: function(type, hash, property) {
-  //   console.log(type);
-  //   console.log(hash);
-  //   console.log(property);
-  // },
-  //
-  // serialize: function(record, options) {
-  //   alert("Hello")
-  // }
-});
+Crm.ApplicationSerializer = DS.ActiveModelSerializer.extend();

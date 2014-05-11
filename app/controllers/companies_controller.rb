@@ -11,6 +11,15 @@ class CompaniesController < ApplicationController
     render json: @company, status: 200
   end
 
+  def create
+    company = Company.new(company_params)
+    if company.save
+      render json: company, status: 200
+    else
+      render json: { error: "Save failed"} , staus: 422
+    end
+  end
+
   def update
     company = Company.find(params[:id])
     company.update(company_params)
