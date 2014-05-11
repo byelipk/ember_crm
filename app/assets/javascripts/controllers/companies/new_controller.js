@@ -5,7 +5,7 @@ Crm.CompaniesNewController = Ember.Controller.extend({
     save: function() {
       // Get handle on controller
       var self = this;
-      
+
       // Get model
       var model = self.get('model');
 
@@ -28,7 +28,14 @@ Crm.CompaniesNewController = Ember.Controller.extend({
     },
 
     cancel: function() {
-      alert('Canceled');
+      var self = this;
+      var model = self.get('model');
+
+      if (model && model.get('isDirty')) {
+        model.rollback();
+      }
+
+      self.transitionToRoute('companies');
     }
   }
 });
