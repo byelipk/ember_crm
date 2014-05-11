@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   respond_to :json
 
   def index
-    @people = Person.all
+    @people = params[:ids] ? Person.find(params[:ids]) : Person.all
     render json: @people, status: 200
   end
 
