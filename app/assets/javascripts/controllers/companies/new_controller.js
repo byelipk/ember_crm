@@ -1,7 +1,8 @@
 // for more details see: http://emberjs.com/guides/controllers/
 
-Crm.CompaniesNewController = Ember.Controller.extend({
+Crm.CompaniesNewController = Ember.ObjectController.extend({
   actions: {
+
     save: function() {
       // Get handle on controller
       var self = this;
@@ -31,9 +32,7 @@ Crm.CompaniesNewController = Ember.Controller.extend({
       var self = this;
       var model = self.get('model');
 
-      if (model && model.get('isDirty')) {
-        model.rollback();
-      }
+      model.rollback();
 
       self.transitionToRoute('companies');
     }

@@ -5,9 +5,11 @@ Crm.CompaniesNewRoute = Ember.Route.extend({
     return this.store.createRecord('company');
   },
 
-  renderTemplate: function(controller, model) {
-    this.render('company/_edit');
-  },
+  // We can do this if we didn't want to make a template:
+  //
+  // renderTemplate: function(controller, model) {
+  //   this.render('company/_edit');
+  // },
 
   deactivate: function() {
     // Get model from controller

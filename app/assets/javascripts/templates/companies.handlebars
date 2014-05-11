@@ -3,9 +3,11 @@
         <div id="company-list" class="list-group">
             {{#link-to 'companies.new' class="list-group-item bold"}}+ New Company{{/link-to}}
             {{#each}}
+              {{#if name}}
                 {{#link-to 'company' this class="list-group-item"}}
                     {{name}}
                 {{/link-to}}
+              {{/if}}
             {{/each}}
         </div>
     </div>
