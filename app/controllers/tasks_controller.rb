@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   respond_to :json
 
   def index
-    @tasks = Task.find(params[:ids])
+    @tasks = params[:ids] ? Task.find(params[:ids]) : Task.all
     render json: @tasks, status: 200
   end
 
