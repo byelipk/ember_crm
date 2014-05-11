@@ -1,3 +1,5 @@
 class TaskSerializer < ActiveModel::Serializer
-  attributes :id, :subject, :taskable_id, :taskable_type
+  attributes :id, :subject
+
+  has_one :taskable, polymorphic: true, embed: :id
 end
