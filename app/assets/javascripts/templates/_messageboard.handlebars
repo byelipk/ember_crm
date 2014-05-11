@@ -1,0 +1,20 @@
+{{#if successMessages}}
+  <div class="alert alert-success">
+    <a class="close" aria-hidden="true" {{action dismissSuccessMessages}}>&times;</a>
+    <ul>
+      {{#each successMessages}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}
+{{#if errorMessages}}
+  <div class="alert alert-danger">
+    <a class="close" aria-hidden="true" {{action dismissErrorMessages}}>&times;</a>
+    <ul>
+      {{#each errorMessages}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}

@@ -1,33 +1,12 @@
 // for more details see: http://emberjs.com/guides/controllers/
+//= require ../mixins/messagable.js
 
-Crm.CompanyController = Ember.ObjectController.extend({
+Crm.CompanyController = Ember.ObjectController.extend( Crm.Savable, {
   isEditing: false,
 
   actions: {
     edit: function() {
       this.set('isEditing', true);
-    },
-
-    save: function() {
-      // Get current model
-      var model = this.get('model');
-
-      // Check if model has changes
-      if (model.get('isDirty')) {
-
-        // Get a handle on the controller
-        var self = this;
-
-        model.save().then(function() {
-
-          self.set('isEditing', false);
-
-        }, function() {
-
-          alert('Save failed!')
-
-        });
-      }
     },
 
     cancel: function() {
