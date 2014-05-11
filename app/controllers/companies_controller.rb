@@ -10,4 +10,16 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     render json: @company, status: 200
   end
+
+  def update
+    company = Company.find(params[:id])
+    company.update(company_params)
+    render json: company, status: 200
+  end
+
+  private
+
+  def company_params
+    params.require(:company).permit(:name)
+  end
 end

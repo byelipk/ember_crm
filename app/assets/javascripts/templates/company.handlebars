@@ -1,5 +1,5 @@
-<h1>{{name}}</h1>
-
-<p>Your content here.</p>
-
-{{outlet}}
+{{#if isEditing}}
+  {{partial "company/_edit"}}
+{{else}}
+  {{partial "company/_show"}}
+{{/if}}

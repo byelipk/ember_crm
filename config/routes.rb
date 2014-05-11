@@ -2,7 +2,7 @@ Crm::Application.routes.draw do
   root 'home#index'
 
   resources :people, only: [:index, :show]
-  resources :companies, only: [:index, :show]
+  resources :companies, only: [:index, :show, :update]
   resources :tasks, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.

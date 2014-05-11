@@ -1,0 +1,22 @@
+<section class="secondary">
+   <div class="row">
+        <div class="col-md-12">
+          <form role="form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                {{input type="text" value=name class="form-control" id="name" placeholder="Company Name"}}
+              </div>
+          </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" {{action 'save'}}>Save</button>
+        </div>
+        <div class="col-md-6 right">
+            {{#unless isNew}}
+                <button type="submit" class="btn btn-default" {{action 'cancel'}}>Cancel</button>
+            {{/unless}}
+        </div>
+    </div>
+</section>
