@@ -1,7 +1,7 @@
 Crm::Application.routes.draw do
   root 'home#index'
 
-  resources :people, only: [:index, :show]
+  resources :people, only: [:index, :show, :update, :create]
   resources :companies, only: [:index, :show, :update, :create]
   resources :tasks, only: [:index, :show]
 
