@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
   def create
     person = Person.new(person_params)
     if person.save
-      render json: person, status: 200
+      render json: person, status: 201
     else
       render json: { errors: person.errors.messages }, status: 422
     end
@@ -22,13 +22,16 @@ class PeopleController < ApplicationController
 
   def update
     person = Person.find(params[:id])
-    person.update(person_params)
-    render json: person, status: 200
+    if person.update(person_params)
+      render json: person, status: 200
+    else
+      render json: { errors: person.errors.messages }, status: 422
+    end
   end
 
   private
 
   def person_params
-    params.require(:person).permit(:name)
+    params.require(:person).permit(:first_name, :last_name, :city, :state, :email)
   end
 end

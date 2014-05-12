@@ -9,7 +9,10 @@ Crm.Person = Crm.Taskable.extend({
     state: DS.attr('string'),
 
     fullName: function() {
-      return this.get('firstName') + ' ' + this.get('lastName') ;
+      var firstName = this.get('firstName');
+      var lastName = this.get('lastName');
+
+      return (firstName ? firstName : '') + ' ' + (lastName ? lastName : '').trim();
     }.property('firstName', 'lastName'),
 
     location: function() {

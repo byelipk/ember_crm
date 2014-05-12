@@ -1,6 +1,6 @@
 // for more details see: http://emberjs.com/guides/controllers/
 
-Crm.CompanyController = Ember.ObjectController.extend( Crm.Savable, {
+Crm.PersonController = Ember.ObjectController.extend(Crm.Savable, {
   isEditing: false,
 
   actions: {

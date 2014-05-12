@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
   def create
     company = Company.new(company_params)
     if company.save
-      render json: company, status: 200
+      render json: company, status: 201
     else
       render json: { errors: company.errors.messages }, status: 422
     end
