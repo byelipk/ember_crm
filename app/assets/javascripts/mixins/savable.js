@@ -3,9 +3,11 @@
 Crm.Savable = Ember.Mixin.create(Crm.Messagable, {
   actions: {
     save: function() {
+      var self = this;
+      self.send('dismissAllMessages');
+      
       var model = this.get('model');
       if (model.get('isDirty')) {
-        var self = this;
         model.save().then(function() {
 
           self.send('addSuccessMessage', 'Save successful!');
@@ -13,8 +15,8 @@ Crm.Savable = Ember.Mixin.create(Crm.Messagable, {
 
         }, function(data) {
           // alert("Fail!");
-          if (data.responseJSON && data.responseJSON.errors) {
-            var errors = data.responseJSON.errors;
+          if (data.errors) {
+            var errors = data.errors;
             if (errors) {
               $.each(errors, function(key, errorGroup) {
                 $.each(errorGroup, function(index, error){

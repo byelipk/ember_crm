@@ -16,7 +16,7 @@ class CompaniesController < ApplicationController
     if company.save
       render json: company, status: 200
     else
-      render json: company.errors.messages , staus: 422
+      render json: { errors: company.errors.messages }, status: 422
     end
   end
 
