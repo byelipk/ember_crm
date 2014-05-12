@@ -10,6 +10,13 @@ Crm.CompaniesNewRoute = Ember.Route.extend({
   // renderTemplate: function(controller, model) {
   //   this.render('company/_edit');
   // },
+  beforeModel: function() {
+    var controller = this.get('controller');
+
+    if (controller) {
+      controller.send('dismissAllMessages');
+    }
+  },
 
   deactivate: function() {
     // Get model from controller

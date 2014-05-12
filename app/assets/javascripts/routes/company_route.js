@@ -12,6 +12,7 @@ Crm.CompanyRoute = Ember.Route.extend({
     if (controller) {
 
       controller.set('isEditing', false);
+      controller.send('dismissAllMessages');
 
       var oldModel = controller.get('model');
 
