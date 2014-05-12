@@ -27,4 +27,4 @@ Crm.Savable = Ember.Mixin.create(Crm.Messagable, {
       }
     }
   }
-})
+});
